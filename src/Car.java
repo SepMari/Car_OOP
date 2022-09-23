@@ -50,7 +50,6 @@ public class Car {
         } else this.productionYear = productionYear;
     }
 
-
     @Override
     public String toString() {
         return  brand + ' '
