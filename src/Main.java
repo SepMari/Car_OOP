@@ -1,11 +1,13 @@
+import transport.Car;
+
 public class Main {
     public static void main(String[] args) {
 
-        Car ladaGrande = new Car("Grande", 1.7f, "желтый", 2015, "Россия");
-        Car audiA8 = new Car("Audi", 3.0f, "черный", 2020, "Германия");
-        Car bmwZ8 = new Car("BMW", "Z8", 3.0f, "черный", 2021, "Германия");
-        Car kiaSportage4 = new Car("Kia", "Sportage 4", 2.4f, "красный", 2018, "Южная Коррея");
-        Car hyundaiAvante = new Car("Hyundai", "Avante", 1.6f, "оранжевый", 2016, "Южная Коррея");
+        Car ladaGrande = new Car("Lada", "Grande",1.7f, "желтый", 2015, "Россия", "механика", "седан", "м136вр777", 4);
+        Car audiA8 = new Car("Audi","", 3.0f, "черный", 2020, "Германия", "механика", "седан", "5136вр7377", 4);
+        Car bmwZ8 = new Car("BMW", "Z8", 3.0f, "черный", 2021, "Германия", "механика", "седан", "м136вр777", 4);
+        Car kiaSportage4 = new Car("Kia", "Sportage 4", 2.4f, "красный", 2018, "Южная Коррея", "механика", "седан", "м136вр777", 4);
+        Car hyundaiAvante = new Car("Hyundai", "Avante", 1.6f, "оранжевый", 2016, "Южная Коррея", "механика", "седан", "м136вр777", 4);
 
         System.out.println(ladaGrande);
         System.out.println(audiA8);
