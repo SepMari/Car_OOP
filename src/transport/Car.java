@@ -2,7 +2,7 @@ package transport;
 
 import java.time.LocalDate;
 
-public class Car {
+public class Car extends Transport {
     public static class Key{
         private final boolean remoteRunEngine;
         private final boolean withoutKeyAccess;
@@ -70,12 +70,8 @@ public class Car {
             }
         }
     }
-    private final String brand;
-    private final String model;
+
     private float engineVolume;
-    private String color;
-    private final int productionYear;
-    private final String productionCountry;
     private String transmission;
     private final String bodyType;
     private String registrationNumber;
@@ -86,36 +82,22 @@ public class Car {
 
 
     public Car(String brand, String model, float engineVolume, String color, int productionYear, String productionCountry,
-               String transmission, String bodyType, String registrationNumber, int numberSeats) {
+               String transmission, String bodyType, String registrationNumber, int numberSeats, int maxSpeed) {
+        super(brand, model, productionYear, productionCountry, color, maxSpeed);
+
         this.summerTires = true;
 
         if (registrationNumber == null || registrationNumber.isEmpty() || registrationNumber.isBlank() || registrationNumber.length() != 9){
             this.registrationNumber = "х000хх000";
         } else this.registrationNumber = registrationNumber;
 
-        if (color == null || color.isEmpty() || color.isBlank()){
-            this.color = "белый";
-        } else this.color = color;
-
         if (transmission == null || transmission.isEmpty() || transmission.isBlank()){
             this.transmission = "Информация не указана";
         } else this.transmission = transmission;
 
-        if (brand == null || brand.isEmpty() || brand.isBlank()){
-            this.brand = "Информация не указана";
-        } else this.brand = brand;
-
-        if (model == null || model.isEmpty() || model.isBlank()){
-            this.model = "Информация не указана";
-        } else this.model = model;
-
         if (numberSeats < 0){
             this.numberSeats = 0;
         } else this.numberSeats = numberSeats;
-
-        if (productionCountry == null || productionCountry.isEmpty() || productionCountry.isBlank()){
-            this.productionCountry = "Информация не указана";
-        } else this.productionCountry = productionCountry;
 
         if (bodyType == null || bodyType.isEmpty() || bodyType.isBlank()){
             this.bodyType = "Информация не указана";
@@ -125,37 +107,15 @@ public class Car {
             this.engineVolume = 1.5f;
         } else this.engineVolume = engineVolume;
 
-        if (productionYear == 0) {
-            this.productionYear = 2000;
-        } else this.productionYear = productionYear;
-
         if(key == null) {
             this.key = new Key();
         } else {
             this.key = key;
         }
-
-    }
-
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
     }
 
     public float getEngineVolume() {
         return engineVolume;
-    }
-
-    public int getProductionYear() {
-        return productionYear;
-    }
-
-    public String getProductionCountry() {
-        return productionCountry;
     }
 
     public String getBodyType() {
@@ -164,17 +124,6 @@ public class Car {
 
     public int getNumberSeats() {
         return numberSeats;
-    }
-
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color == null || color.isEmpty() || color.isBlank()){
-            this.color = "белый";
-        } else this.color = color;
     }
 
     public String getTransmission() {
@@ -229,19 +178,25 @@ public class Car {
                 && Character.isDigit(chars[6]) && Character.isDigit(chars[7]) && Character.isDigit(chars[8]);
     }
 
+
     @Override
+    public void refill() {
+        System.out.println("можно заправлять бензином, дизелем на заправке или заряжать на специальных электроду-парковках, если это электрокар");
+    }
+
     public String toString() {
-        return  brand + ' '
-                + model
-                + ", " + productionYear
-                + " год выпуска, сборка " + productionCountry
-                + ", " + color
+        return  getBrand() + ' '
+                + getModel()
+                + ", " + getProductionYear()
+                + " год выпуска, сборка " + getProductionCountry()
+                + ", " + getColor()
                 + " цвет, объем двигателя - "  + engineVolume
                 + ", коробка передач - " + transmission
                 + ", тип кузова - " + bodyType
                 + ", регистрационный номер - " + registrationNumber
                 + ", количество мест - " + numberSeats
-                + ", "  + (getSummerTires() ? "летняя" : "зимняя") + " резина";
+                + ", "  + (getSummerTires() ? "летняя" : "зимняя") + " резина"
+                + ", максимальная скорость - " + getMaxSpeed();
     }
 }
 
@@ -250,4 +205,15 @@ public class Car {
     если не указан объем двигателя, то значение по умолчанию — 1,5 л
     цвет кузова по умолчанию — белый
     если не указан год производства, то значение по умолчанию — 2000
+
+        @Override
+    public String toString() {
+        return
+                + engineVolume
+                + ", коробка передач - " + transmission
+                + ", тип кузова - " + bodyType
+                + ", регистрационный номер - " + registrationNumber
+                + ", количество мест - " + numberSeats
+                + ", "  + (getSummerTires() ? "летняя" : "зимняя") + " резина";
+    }
  */
