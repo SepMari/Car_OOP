@@ -33,9 +33,6 @@ public class Train extends Transport {
         } else this.numberOfWagons = numberOfWagons;
     }
 
-    public Train(String brand, String model, int productionYear, String productionCountry, String color, int maxSpeed) {
-        super(brand,model,productionYear,productionCountry,color,maxSpeed);
-    }
 
     @Override
     public void refill() {

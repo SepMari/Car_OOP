@@ -1,11 +1,18 @@
+import animals.*;
 import transport.Bus;
 import transport.Car;
 import transport.Train;
-import transport.Transport;
+
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
+        taskCar();
+        taskAnimal();
 
+    }
+
+    private static void taskCar() {
         Car ladaGrande = new Car("Lada", "Grande",1.7f, "желтый", 2015, "Россия", "механика", "седан", "м136вр777", 4, 200);
         Car audiA8 = new Car("Audi","", 3.0f, "черный", 2020, "Германия", "механика", "седан", "5136вр7377", 4, 350);
         Car bmwZ8 = new Car("BMW", "Z8", 3.0f, "черный", 2021, "Германия", "механика", "седан", "м136вр777", 4,400);
@@ -43,8 +50,50 @@ public class Main {
         System.out.println(bmwD4);
 
         bmwZ5.refill();
+    }
 
+    private static void taskAnimal() {
+        Herbivores horse = new Herbivores("Звезда", 5, "Ранчо", 16);
 
+        System.out.println(horse);
+        horse.eat();
+        horse.sleep();
+        horse.go();
+        horse.walk();
+        horse.graze();
+
+        Predators tiger = new Predators("Ррмяу", 6, "Африка", 45);
+
+        System.out.println(tiger);
+        tiger.sleep();
+        tiger.go();
+        tiger.hunt();
+        tiger.eat();
+        tiger.walk();
+
+        Amphibians frog = new Amphibians("Квакушка", 2, "Пруд");
+
+        System.out.println(frog);
+        frog.hunt();
+        frog.eat();
+        frog.sleep();
+        frog.go();
+
+        FlyBirds gull = new FlyBirds("Чайка Аааа", 1, "");
+
+        System.out.println(gull);
+        gull.eat();
+        gull.hunt();
+        gull.go();
+        gull.sleep();
+
+        NotFlyBirds penguin = new NotFlyBirds("Пингвин Пин", 2, "");
+
+        System.out.println(penguin);
+        penguin.eat();
+        penguin.hunt();
+        penguin.go();
+        penguin.sleep();
     }
 }
 
