@@ -3,12 +3,11 @@ import transport.Bus;
 import transport.Car;
 import transport.Train;
 
-import java.io.IOException;
-
 public class Main {
     public static void main(String[] args) {
-        taskCar();
-        taskAnimal();
+//        taskCar();
+//        taskAnimal();
+        taskAutoracing();
 
     }
 
@@ -95,30 +94,47 @@ public class Main {
         penguin.go();
         penguin.sleep();
     }
+
+    private static void taskAutoracing() {
+        autoracing.Car ladaGrande = new autoracing.Car("Lada", "Grande",1.7f);
+        autoracing.Car audiA8 = new autoracing.Car("Audi","", 3.0f);
+        autoracing.Car bmwZ8 = new autoracing.Car("BMW", "Z8", 3.0f);
+        autoracing.Car kiaSportage4 = new autoracing.Car("Kia", "Sportage 4", 0);
+        autoracing.Car hyundaiAvante = new autoracing.Car("Hyundai", "Avante", 1.6f);
+
+//        System.out.println(ladaGrande);
+//        System.out.println(audiA8);
+//        System.out.println(bmwZ8);
+//        System.out.println(kiaSportage4);
+//        System.out.println(hyundaiAvante);
+//
+//        System.out.println();
+
+
+        autoracing.Train lastochka = new autoracing.Train("Поезд Ласточка", "B-901",1.1f);
+        autoracing.Train leningrad = new autoracing.Train("Поезд Ленинград", "D-125", 2.1f);
+
+//        System.out.println(lastochka);
+//        System.out.println(leningrad);
+//
+//        System.out.println();
+
+
+        autoracing.Bus bmwZ5 = new autoracing.Bus("BMW", "Z5",1.6f);
+        autoracing.Bus bmwM5 = new autoracing.Bus("BMW", "M5",1.3f);
+        autoracing.Bus bmwD4 = new autoracing.Bus("BMW", "D5",1.5f);
+
+//        System.out.println(bmwZ5);
+//        System.out.println(bmwM5);
+//        System.out.println(bmwD4);
+
+        //InfoDriver<autoracing.Car> alex = new InfoDriver<autoracing.Car>();
+
+    }
 }
 
 
 
 /*
 
-    Поезд Ласточка, модель B-901, 2011 год выпуска в России, скорость передвижения – 301 км/ч,
-    отходит от Белорусского вокзала и следует до станции Минск-Пассажирский. Цена поездки - 3500 рублей, в поезде 11 вагонов
-
-    Поезд Ленинград, модель D-125, 2019 год выпуска в России, скорость передвижения – 270 км/ч,
-    отходит от Ленинградского вокзала и следует до станции Ленинград-Пассажирский. Цена поездки - 1700 рублей, в поезде 8 вагонов.
-
-
-    Создан класс car со свойствами brand, model, engineVolume, color, productionYear, productionCountry
-    Создан объект Lada Grande со свойствами класса car
-    Создан объекта Audi A8 со свойствами класса car
-    Создан объект BMW Z8 со свойствами класса car
-    Создан объект Kia Sportage 4 поколение со свойствами класса car
-    Создан объект Hyundai Avante со свойствами класса car
-    В консоль выводится информация об каждом автомобиле и все указанные характеристики.
-
-    Lada Grande, 2015 год выпуска, сборка в России, желтого цвета, объем двигателя - 1,7
-    Audi A8 50 L TDI quattro, 2020 год выпуска, сборка в Германии, черный цвет кузова, объем двигателя 3.0 литра
-    BMW Z8, сборка в Германии в 2021 году, черный цвет кузова, объем – 3.0
-    Kia Sportage 4 поколение, 2018 год выпуска, сборка в Южной Корее, цвет кузова красный, объем двигателя – 2,4 литра.
-    Hyundai Avante, сборка в Южной Корее, цвет кузова оранжевый, объем двигателя - 1,6 литра, год выпуска - 2016 год.
  */
