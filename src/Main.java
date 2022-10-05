@@ -97,11 +97,11 @@ public class Main {
     }
 
     private static void taskAutoracing() {
-        autoracing.Car ladaGrande = new autoracing.Car("Lada", "Grande",1.7f);
-        autoracing.Car audiA8 = new autoracing.Car("Audi","", 3.0f);
-        autoracing.Car bmwZ8 = new autoracing.Car("BMW", "Z8", 3.0f);
-        autoracing.Car kiaSportage4 = new autoracing.Car("Kia", "Sportage 4", 0);
-        autoracing.Car hyundaiAvante = new autoracing.Car("Hyundai", "Avante", 1.6f);
+        autoracing.Car ladaGrande = new autoracing.Car("Lada", "Grande",1.7f, autoracing.Car.BodyType.COUPE);
+        autoracing.Car audiA8 = new autoracing.Car("Audi","", 3.0f, autoracing.Car.BodyType.SEDAN);
+        autoracing.Car bmwZ8 = new autoracing.Car("BMW", "Z8", 3.0f, autoracing.Car.BodyType.CROSSOVER);
+        autoracing.Car kiaSportage4 = new autoracing.Car("Kia", "Sportage 4", 0, autoracing.Car.BodyType.UNIVERSAL);
+        autoracing.Car hyundaiAvante = new autoracing.Car("Hyundai", "Avante", 1.6f, autoracing.Car.BodyType.COUPE);
 
 //        System.out.println(ladaGrande);
 //        System.out.println(audiA8);
@@ -112,8 +112,8 @@ public class Main {
 //        System.out.println();
 
 
-        autoracing.Train lastochka = new autoracing.Train("Поезд Ласточка", "B-901",1.1f);
-        autoracing.Train leningrad = new autoracing.Train("Поезд Ленинград", "D-125", 2.1f);
+        autoracing.Train lastochka = new autoracing.Train("Поезд Ласточка", "B-901",1.1f, autoracing.Train.LoadCapacity.N3);
+        autoracing.Train leningrad = new autoracing.Train("Поезд Ленинград", "D-125", 2.1f, autoracing.Train.LoadCapacity.N2);
 
 //        System.out.println(lastochka);
 //        System.out.println(leningrad);
@@ -121,9 +121,9 @@ public class Main {
 //        System.out.println();
 
 
-        autoracing.Bus bmwZ5 = new autoracing.Bus("BMW", "Z5",1.6f);
-        autoracing.Bus bmwM5 = new autoracing.Bus("BMW", "M5",1.3f);
-        autoracing.Bus bmwD4 = new autoracing.Bus("BMW", "D5",1.5f);
+        autoracing.Bus bmwZ5 = new autoracing.Bus("BMW", "Z5",1.6f, autoracing.Bus.Capacity.MAXLARGE);
+        autoracing.Bus bmwM5 = new autoracing.Bus("BMW", "M5",1.3f, autoracing.Bus.Capacity.EXTRASMALL);
+        autoracing.Bus bmwD4 = new autoracing.Bus("BMW", "D5",1.5f, autoracing.Bus.Capacity.SMALL);
 
 //        System.out.println(bmwZ5);
 //        System.out.println(bmwM5);

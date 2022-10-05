@@ -19,6 +19,8 @@ public abstract class Transport {
         } else this.engineVolume = engineVolume;
     }
 
+    public abstract void pintType();
+
     public abstract void startTraffic();
 
     public abstract void finishTraffic();
