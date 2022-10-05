@@ -1,5 +1,5 @@
 import animals.*;
-import autoracing.DriverCar;
+import autoracing.Driver;
 import transport.Bus;
 import transport.Car;
 import transport.Train;
@@ -129,8 +129,15 @@ public class Main {
 //        System.out.println(bmwM5);
 //        System.out.println(bmwD4);
 
-        //DriverCar<autoracing.Car> car = new DriverCar<>("Петров Петр Петрович");
 
+        Driver<autoracing.Car> petr = new Driver<>("Петр", 'B', 1, bmwZ8);
+        System.out.println(petr);
+
+        Driver<autoracing.Bus> ivan = new Driver<>("Иван", 'C', 3, bmwM5);
+        System.out.println(ivan);
+
+        Driver<autoracing.Train> make = new Driver<>("Майк", 'D',7, lastochka);
+        System.out.println(make);
     }
 }
 
