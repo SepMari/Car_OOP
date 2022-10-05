@@ -1,13 +1,15 @@
 package autoracing;
 
-public abstract class Driver {
+public abstract class Driver<C extends Transport> {
     private String fullName;
     private boolean driverLicense;
     private int experience;
 
-    public Driver(String fullName, boolean driverLicense, int experience) {
+    public Driver(String fullName) {
         this.fullName = fullName;
-        this.driverLicense = driverLicense;
+    }
+    public Driver(String fullName, int experience) {
+        this.fullName = fullName;
         this.experience = experience;
     }
 

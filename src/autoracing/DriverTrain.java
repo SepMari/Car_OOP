@@ -1,9 +1,9 @@
 package autoracing;
 
-public class driverTrain extends Driver {
+public class DriverTrain extends Driver<Train> {
 
-    public driverTrain(String fullName, boolean driverLicense, int experience) {
-        super(fullName, driverLicense, experience);
+    public DriverTrain(String fullName) {
+        super(fullName);
     }
 
     @Override

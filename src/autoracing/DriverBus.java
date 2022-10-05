@@ -1,10 +1,9 @@
 package autoracing;
 
-public class driverCar extends Driver {
+public class DriverBus extends Driver<Bus> {
 
-
-    public driverCar(String fullName, boolean driverLicense, int experience) {
-        super(fullName, driverLicense, experience);
+    public DriverBus(String fullName) {
+        super(fullName);
     }
 
     @Override
@@ -21,4 +20,7 @@ public class driverCar extends Driver {
     public void refuelTheCar() {
 
     }
+
+
+
 }

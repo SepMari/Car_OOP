@@ -1,4 +1,5 @@
 import animals.*;
+import autoracing.DriverCar;
 import transport.Bus;
 import transport.Car;
 import transport.Train;
@@ -128,7 +129,7 @@ public class Main {
 //        System.out.println(bmwM5);
 //        System.out.println(bmwD4);
 
-        //InfoDriver<autoracing.Car> alex = new InfoDriver<autoracing.Car>();
+        //DriverCar<autoracing.Car> car = new DriverCar<>("Петров Петр Петрович");
 
     }
 }
