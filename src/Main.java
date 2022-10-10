@@ -1,5 +1,6 @@
 import animals.*;
 import autoracing.Driver;
+import autoracing.Transport;
 import transport.Bus;
 import transport.Car;
 import transport.Train;
@@ -138,7 +139,22 @@ public class Main {
 
         Driver<autoracing.Train> make = new Driver<>("Майк", 'D',7, lastochka);
         System.out.println(make);
+
+        service(ladaGrande, hyundaiAvante, leningrad, bmwZ5);
     }
+
+    private static void service(Transport... transports) {
+        for (Transport transport : transports) {
+            if (!transport.service()) {
+                try {
+                    throw new RuntimeException("Транспорт " + transport.getBrand() + " " + transport.getModel() + " нужна диагностика");
+                } catch (RuntimeException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+    }
+
 }
 
 

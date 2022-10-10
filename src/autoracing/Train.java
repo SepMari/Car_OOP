@@ -54,6 +54,12 @@ public class Train extends Transport implements Competing {
     }
 
     @Override
+    public boolean service() {
+        System.out.println("Поезд " + getBrand() + " " + getModel() + " в диагностике не требуется");
+        return true;
+    }
+
+    @Override
     public void pitStop() {
 
     }

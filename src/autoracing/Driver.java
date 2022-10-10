@@ -76,7 +76,7 @@ public class Driver<T extends Transport> {
                 f = transport instanceof Train;
                 break;
             default:
-                f = false;
+                throw new IllegalArgumentException("Неверная категория прав");
         }
 
         if (f) {
