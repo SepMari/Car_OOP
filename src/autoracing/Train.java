@@ -33,6 +33,11 @@ public class Train extends Transport implements Competing {
     }
 
     @Override
+    public void fixTransport() {
+
+    }
+
+    @Override
     public void pintType() {
         if (loadСapacity == null) {
             System.out.println("Данных по авто недостаточно");

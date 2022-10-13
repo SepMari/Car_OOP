@@ -14,6 +14,11 @@ public class Car extends Transport implements Competing {
     }
 
     @Override
+    public void fixTransport() {
+
+    }
+
+    @Override
     public void pintType() {
         if (bodyType == null) {
             System.out.println("Данных по авто недостаточно");

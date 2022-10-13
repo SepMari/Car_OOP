@@ -36,6 +36,11 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
+    public void fixTransport() {
+
+    }
+
+    @Override
     public void pintType() {
         if (capacity == null) {
             System.out.println("Данных по авто недостаточно");
