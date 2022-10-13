@@ -1,9 +1,15 @@
 package autoracing;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Transport {
     private String brand;
     private String model;
     private float engineVolume;
+    private final List<Driver <?>> drivers = new ArrayList<>();
+    private final List<Mechanic <?>> mechanics = new ArrayList<>();
+    private final List<Sponsor> sponsors = new ArrayList<>();
 
     public Transport(String brand, String model, float engineVolume) {
         if (brand == null || brand.isEmpty() || brand.isBlank()){
@@ -19,6 +25,20 @@ public abstract class Transport {
         } else this.engineVolume = engineVolume;
     }
 
+    public void addDriver(Driver<?> driver){
+        drivers.add(driver);
+    }
+
+    public void addMechanic(Mechanic<?> mechanic){
+        mechanics.add(mechanic);
+    }
+
+    public void addSponsor(Sponsor sponsor){
+        sponsors.add(sponsor);
+    }
+
+    public abstract void fixTransport();
+
     public abstract void pintType();
 
     public abstract void startTraffic();
@@ -33,6 +53,18 @@ public abstract class Transport {
 
     public String getModel() {
         return model;
+    }
+
+    public List<Driver<?>> getDrivers() {
+        return drivers;
+    }
+
+    public List<Mechanic<?>> getMechanics() {
+        return mechanics;
+    }
+
+    public List<Sponsor> getSponsors() {
+        return sponsors;
     }
 
     public float getEngineVolume() {
