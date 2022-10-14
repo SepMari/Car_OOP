@@ -1,10 +1,9 @@
 import animals.*;
-import autoracing.*;
+import autoracing.Driver;
+import autoracing.Transport;
 import transport.Bus;
 import transport.Car;
 import transport.Train;
-
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -100,14 +99,7 @@ public class Main {
 
     private static void taskAutoracing() {
         autoracing.Car ladaGrande = new autoracing.Car("Lada", "Grande",1.7f, autoracing.Car.BodyType.COUPE);
-        ladaGrande.addDriver(new Driver<>("Петр", 'B', 11, ladaGrande));
-        ladaGrande.addMechanic(new Mechanic<>("Иван", "Иванов", "Супер-Механик"));
-        ladaGrande.addSponsor(new Sponsor("Супер-Спонсор", 500_000));
-
         autoracing.Car audiA8 = new autoracing.Car("Audi","", 3.0f, autoracing.Car.BodyType.SEDAN);
-        audiA8.addDriver(new Driver<>("Иван", 'B', 10, audiA8));
-        audiA8.addMechanic(new Mechanic<>("Петр", "Петров", "Супер-Спонсор"));
-
         autoracing.Car bmwZ8 = new autoracing.Car("BMW", "Z8", 3.0f, autoracing.Car.BodyType.CROSSOVER);
         autoracing.Car kiaSportage4 = new autoracing.Car("Kia", "Sportage 4", 0, autoracing.Car.BodyType.UNIVERSAL);
         autoracing.Car hyundaiAvante = new autoracing.Car("Hyundai", "Avante", 1.6f, autoracing.Car.BodyType.COUPE);
@@ -122,12 +114,7 @@ public class Main {
 
 
         autoracing.Train lastochka = new autoracing.Train("Поезд Ласточка", "B-901",1.1f, autoracing.Train.LoadCapacity.N3);
-        lastochka.addDriver(new Driver<>("Иван", 'D', 10, lastochka));
-        lastochka.addMechanic(new Mechanic<>("Петр", "Петров", "Супер-Спонсор"));
-
         autoracing.Train leningrad = new autoracing.Train("Поезд Ленинград", "D-125", 2.1f, autoracing.Train.LoadCapacity.N2);
-        leningrad.addDriver(new Driver<>("Иван", 'D', 8, leningrad));
-        leningrad.addMechanic(new Mechanic<>("Петр", "Петров", "Супер-Спонсор"));
 
 //        System.out.println(lastochka);
 //        System.out.println(leningrad);
@@ -136,16 +123,8 @@ public class Main {
 
 
         autoracing.Bus bmwZ5 = new autoracing.Bus("BMW", "Z5",1.6f, autoracing.Bus.Capacity.MAXLARGE);
-        bmwZ5.addDriver(new Driver<>("Иван", 'D', 8, bmwZ5));
-        bmwZ5.addMechanic(new Mechanic<>("Петр", "Петров", "Супер-Спонсор"));
-
         autoracing.Bus bmwM5 = new autoracing.Bus("BMW", "M5",1.3f, autoracing.Bus.Capacity.EXTRASMALL);
-        bmwM5.addDriver(new Driver<>("Иван", 'D', 5, bmwM5));
-        bmwM5.addMechanic(new Mechanic<>("Петр", "Петров", "Супер-Спонсор"));
-
         autoracing.Bus bmwD4 = new autoracing.Bus("BMW", "D5",1.5f, autoracing.Bus.Capacity.SMALL);
-        bmwD4.addDriver(new Driver<>("Иван", 'D', 3, bmwD4));
-        bmwD4.addMechanic(new Mechanic<>("Петр", "Петров", "Супер-Спонсор"));
 
 //        System.out.println(bmwZ5);
 //        System.out.println(bmwM5);
@@ -161,35 +140,7 @@ public class Main {
         Driver<autoracing.Train> make = new Driver<>("Майк", 'D',7, lastochka);
         System.out.println(make);
 
-//        service(ladaGrande, hyundaiAvante, leningrad, bmwZ5);
-
-        List<Transport> transports = List.of(ladaGrande, audiA8,
-                lastochka, leningrad,
-                bmwZ5, bmwM5, bmwD4);
-
-        for (Transport transport : transports) {
-            printInfo(transport);
-        }
-
-        Maintenance maintenance = new Maintenance();
-        maintenance.addCar(ladaGrande);
-        maintenance.addTrain(lastochka);
-        maintenance.service();
-        maintenance.service();
-    }
-
-    private static void printInfo(Transport transport) {
-        System.out.println("Информация по автомобилю " + transport.getBrand() + " " + transport.getModel());
-
-        for (Driver<?> driver : transport.getDrivers()) {
-            System.out.println("Водитель: " + driver.getFullName());
-        }
-        for (Sponsor sponsor : transport.getSponsors()) {
-            System.out.println("Спонсоры: " + sponsor.getName());
-        }
-        for (Mechanic<?> mechanic : transport.getMechanics()) {
-            System.out.println("Механик: " + mechanic.getName() + " " + mechanic.getSurname());
-        }
+        service(ladaGrande, hyundaiAvante, leningrad, bmwZ5);
     }
 
     private static void service(Transport... transports) {

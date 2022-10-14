@@ -14,11 +14,6 @@ public class Car extends Transport implements Competing {
     }
 
     @Override
-    public void fixTransport() {
-        System.out.println("Автомобиль " + getBrand() + ' ' + getModel() + " исправна");
-    }
-
-    @Override
     public void pintType() {
         if (bodyType == null) {
             System.out.println("Данных по авто недостаточно");
