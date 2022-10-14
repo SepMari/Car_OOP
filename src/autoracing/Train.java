@@ -34,7 +34,7 @@ public class Train extends Transport implements Competing {
 
     @Override
     public void fixTransport() {
-
+        System.out.println("Поезд " + getBrand() + ' ' + getModel() + " исправен");
     }
 
     @Override

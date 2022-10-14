@@ -1,8 +1,5 @@
 import animals.*;
-import autoracing.Driver;
-import autoracing.Mechanic;
-import autoracing.Sponsor;
-import autoracing.Transport;
+import autoracing.*;
 import transport.Bus;
 import transport.Car;
 import transport.Train;
@@ -173,6 +170,12 @@ public class Main {
         for (Transport transport : transports) {
             printInfo(transport);
         }
+
+        Maintenance maintenance = new Maintenance();
+        maintenance.addCar(ladaGrande);
+        maintenance.addTrain(lastochka);
+        maintenance.service();
+        maintenance.service();
     }
 
     private static void printInfo(Transport transport) {

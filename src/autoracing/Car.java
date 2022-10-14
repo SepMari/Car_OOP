@@ -15,7 +15,7 @@ public class Car extends Transport implements Competing {
 
     @Override
     public void fixTransport() {
-
+        System.out.println("Автомобиль " + getBrand() + ' ' + getModel() + " исправна");
     }
 
     @Override
