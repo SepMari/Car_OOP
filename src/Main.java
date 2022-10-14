@@ -1,9 +1,10 @@
 import animals.*;
-import autoracing.Driver;
-import autoracing.Transport;
+import autoracing.*;
 import transport.Bus;
 import transport.Car;
 import transport.Train;
+
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -141,6 +142,32 @@ public class Main {
         System.out.println(make);
 
         service(ladaGrande, hyundaiAvante, leningrad, bmwZ5);
+
+        List<Transport> transports = List.of(ladaGrande, audiA8,
+                lastochka, leningrad,
+                bmwZ5, bmwM5, bmwD4);
+        for (Transport transport : transports) {
+            printInfo(transport);
+        }
+
+        Maintenance maintenance = new Maintenance();
+        maintenance.addCar(ladaGrande);
+        maintenance.addTrain(lastochka);
+        maintenance.service();
+        maintenance.service();
+    }
+
+    private static void printInfo(Transport transport) {
+        System.out.println("Информация по автомобилю " + transport.getBrand() + " " + transport.getModel());
+        for (Driver<?> driver : transport.getDrivers()) {
+            System.out.println("Водитель: " + driver.getFullName());
+        }
+        for (Sponsor sponsor : transport.getSponsors()) {
+            System.out.println("Спонсоры: " + sponsor.getName());
+        }
+        for (Mechanic<?> mechanic : transport.getMechanics()) {
+            System.out.println("Механик: " + mechanic.getName() + " " + mechanic.getSurname());
+        }
     }
 
     private static void service(Transport... transports) {
