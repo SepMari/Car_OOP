@@ -100,7 +100,14 @@ public class Main {
 
     private static void taskAutoracing() {
         autoracing.Car ladaGrande = new autoracing.Car("Lada", "Grande",1.7f, autoracing.Car.BodyType.COUPE);
+        ladaGrande.addDriver(new Driver<>("Петр", 'B', 11, ladaGrande));
+        ladaGrande.addMechanic(new Mechanic<>("Иван", "Иванов", "Супер-Механик"));
+        ladaGrande.addSponsor(new Sponsor("Супер-Спонсор", 500_000));
+
         autoracing.Car audiA8 = new autoracing.Car("Audi","", 3.0f, autoracing.Car.BodyType.SEDAN);
+        audiA8.addDriver(new Driver<>("Иван", 'B', 10, audiA8));
+        audiA8.addMechanic(new Mechanic<>("Петр", "Петров", "Супер-Спонсор"));
+
         autoracing.Car bmwZ8 = new autoracing.Car("BMW", "Z8", 3.0f, autoracing.Car.BodyType.CROSSOVER);
         autoracing.Car kiaSportage4 = new autoracing.Car("Kia", "Sportage 4", 0, autoracing.Car.BodyType.UNIVERSAL);
         autoracing.Car hyundaiAvante = new autoracing.Car("Hyundai", "Avante", 1.6f, autoracing.Car.BodyType.COUPE);
@@ -113,35 +120,43 @@ public class Main {
 //
 //        System.out.println();
 
-
         autoracing.Train lastochka = new autoracing.Train("Поезд Ласточка", "B-901",1.1f, autoracing.Train.LoadCapacity.N3);
+        lastochka.addDriver(new Driver<>("Иван", 'D', 10, lastochka));
+        lastochka.addMechanic(new Mechanic<>("Петр", "Петров", "Супер-Спонсор"));
+
         autoracing.Train leningrad = new autoracing.Train("Поезд Ленинград", "D-125", 2.1f, autoracing.Train.LoadCapacity.N2);
+        leningrad.addDriver(new Driver<>("Иван", 'D', 8, leningrad));
+        leningrad.addMechanic(new Mechanic<>("Петр", "Петров", "Супер-Спонсор"));
 
 //        System.out.println(lastochka);
 //        System.out.println(leningrad);
 //
 //        System.out.println();
 
-
         autoracing.Bus bmwZ5 = new autoracing.Bus("BMW", "Z5",1.6f, autoracing.Bus.Capacity.MAXLARGE);
+        bmwZ5.addDriver(new Driver<>("Иван", 'C', 8, bmwZ5));
+        bmwZ5.addMechanic(new Mechanic<>("Петр", "Петров", "Супер-Спонсор"));
+
         autoracing.Bus bmwM5 = new autoracing.Bus("BMW", "M5",1.3f, autoracing.Bus.Capacity.EXTRASMALL);
+        bmwM5.addDriver(new Driver<>("Иван", 'C', 5, bmwM5));
+        bmwM5.addMechanic(new Mechanic<>("Петр", "Петров", "Супер-Спонсор"));
+
         autoracing.Bus bmwD4 = new autoracing.Bus("BMW", "D5",1.5f, autoracing.Bus.Capacity.SMALL);
+        bmwD4.addDriver(new Driver<>("Иван", 'C', 3, bmwD4));
+        bmwD4.addMechanic(new Mechanic<>("Петр", "Петров", "Супер-Спонсор"));
 
 //        System.out.println(bmwZ5);
 //        System.out.println(bmwM5);
 //        System.out.println(bmwD4);
 
-
         Driver<autoracing.Car> petr = new Driver<>("Петр", 'B', 1, bmwZ8);
         System.out.println(petr);
-
         Driver<autoracing.Bus> ivan = new Driver<>("Иван", 'C', 3, bmwM5);
         System.out.println(ivan);
-
         Driver<autoracing.Train> make = new Driver<>("Майк", 'D',7, lastochka);
         System.out.println(make);
 
-        service(ladaGrande, hyundaiAvante, leningrad, bmwZ5);
+//        service(ladaGrande, hyundaiAvante, leningrad, bmwZ5);
 
         List<Transport> transports = List.of(ladaGrande, audiA8,
                 lastochka, leningrad,

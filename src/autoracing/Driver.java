@@ -1,5 +1,7 @@
 package autoracing;
 
+import java.util.Objects;
+
 public class Driver<T extends Transport> {
     private String fullName;
     private char driverLicense;
@@ -82,8 +84,18 @@ public class Driver<T extends Transport> {
         if (f) {
             this.transport = transport;
         } else {
-            System.out.println("Не совпадает категория прав и управляемый трансопрт!");
+            System.out.println("Не совпадает категория прав и управляемый трансопрт!" + transport);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        throw new UnsupportedOperationException("Одинаковые водители " + fullName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullName, driverLicense, experience, transport);
     }
 
     @Override

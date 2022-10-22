@@ -1,5 +1,7 @@
 package autoracing;
 
+import java.util.Objects;
+
 public class Mechanic<T extends Transport> {
 
     private String name;
@@ -30,5 +32,15 @@ public class Mechanic<T extends Transport> {
 
     public String getCompany() {
         return company;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        throw new UnsupportedOperationException("Одинаковые механики " + name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, company);
     }
 }
