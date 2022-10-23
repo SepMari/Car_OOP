@@ -90,7 +90,10 @@ public class Driver<T extends Transport> {
 
     @Override
     public boolean equals(Object o) {
-        throw new UnsupportedOperationException("Одинаковые водители " + fullName);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver<?> driver = (Driver<?>) o;
+        return driverLicense == driver.driverLicense && experience == driver.experience && Objects.equals(fullName, driver.fullName) && Objects.equals(transport, driver.transport);
     }
 
     @Override

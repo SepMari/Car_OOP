@@ -25,15 +25,27 @@ public abstract class Transport {
     }
 
     public void addDriver(Driver<?> driver){
-        drivers.add(driver);
+        if (drivers.contains(driver)) {
+            throw new IllegalArgumentException("Водитель " + driver.getFullName() + " уже добавлен!");
+        } else {
+            drivers.add(driver);
+        }
     }
 
     public void addMechanic(Mechanic<?> mechanic){
-        mechanics.add(mechanic);
+        if (mechanics.contains(mechanic)) {
+            throw new IllegalArgumentException("Механик " + mechanic.getName() + " уже добавлен!");
+        } else {
+            mechanics.add(mechanic);
+        }
     }
 
     public void addSponsor(Sponsor sponsor){
-        sponsors.add(sponsor);
+        if (sponsors.contains(sponsor)) {
+            throw new IllegalArgumentException("Спонсор " + sponsor.getName() + " уже добавлен!");
+        } else {
+            sponsors.add(sponsor);
+        }
     }
 
     public abstract void fixTransport();

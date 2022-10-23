@@ -36,7 +36,10 @@ public class Mechanic<T extends Transport> {
 
     @Override
     public boolean equals(Object o) {
-        throw new UnsupportedOperationException("Одинаковые механики " + name);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Mechanic<?> mechanic = (Mechanic<?>) o;
+        return Objects.equals(name, mechanic.name) && Objects.equals(surname, mechanic.surname) && Objects.equals(company, mechanic.company);
     }
 
     @Override
